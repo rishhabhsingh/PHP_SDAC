@@ -1,24 +1,27 @@
 <?php
+session_start();
 include 'db.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $name = $_POST['name'];
+    $pass = $_POST['pw'];
 
-    $pid = $_POST['pid'];
+    $sql = $conn -> prepare('SELECT PASSWORD FROM USERS WHERE NAME = ?');
+    $sql -> bind_param('s' , $name);
+    $sql -> execute();
+    $sql -> bind_result($password);
+    $sql -> fetch();
 
-    $stmt = $conn->prepare("DELETE FROM products WHERE pid=?");
-    $stmt->bind_param("i", $pid);
-
-    if ($stmt->execute()) {
+    if(password_verify($pass, $password)){
+        $_SESSION['name'] = $name;
         header("Location: home.php");
-        exit();
-    } 
+    }
 }
 ?>
-
 <!doctype html>
 <html lang="en" data-bs-theme="light">
     <head>
-        <title>Add Products</title>
+        <title>Login</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,22 +38,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <main>
             <div
-                class="container mt-4 col-md-4 border rounded shadow"
-            >
-            <h1 class="text-center mt-2">
-                Delete Product
-            </h1>
-                <form method="POST" class="text-center mb-3">
-                <br>
-                PRODUCT ID:
-                <input type="number" name="pid">
-                <br>
+                class="container mt-4 col-md-4 border rounded shadow">
+                
+                <h1 class="text-center mt-2">Login Kijiye!</h1>
 
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                <form method="POST" class="text-center mb-3">
+                    <br>
+                    Name:
+                    <input type="text" name="name">
+                    <br>
+
+                    <br>
+                    Password:
+                    <input type="password" name="pw">
+                    <br>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-            
         </main>
         <!-- Bootstrap JavaScript Bundle (includes Popper) -->
         <script

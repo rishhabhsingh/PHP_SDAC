@@ -4,13 +4,14 @@ include 'db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = $_POST['name'];
-    $id = $_POST['pid'];
+    $pid = $_POST['pid'];
 
     $stmt = $conn->prepare("UPDATE products SET name=? WHERE pid=?");
     $stmt->bind_param("si", $name, $pid);
 
     if ($stmt->execute()) {
-        echo "Record updated successfully";
+        header("Location: home.php");
+        exit();
     }
 }
 ?>

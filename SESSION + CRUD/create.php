@@ -12,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("isis", $pid, $name, $quantity, $category);
 
     if ($stmt->execute()) {
-        echo "New record created successfully";
+        header("Location: home.php");
+        exit();
     }
 }
 ?>
@@ -37,12 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <main>
             <div
-                class="container mt-4 COL-MD-4 border rounded shadow"
+                class="container mt-4 col-md-4 border rounded shadow"
             >
             <h1 class="text-center mt-2">
                 Add Product
             </h1>
-                <form method="POST" class="text-center mb-3" action="read.php">
+                <form method="POST" class="text-center mb-3">
                 <br>
                 PRODUCT ID:
                 <input type="number" name="pid">

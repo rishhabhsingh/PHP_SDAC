@@ -52,12 +52,6 @@ include "db.php";
                                     >
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="read.php" aria-current="page"
-                                        >See Product
-                                        <span class="visually-hidden">(current)</span></a
-                                    >
-                                </li>
                             </ul>
                             <button
                                 class="btn btn-outline-success my-2 my-sm-0"
@@ -71,7 +65,11 @@ include "db.php";
             </nav>
             
         </header>
-        <main></main>
+        <main class="container mt-4">
+            <div class="d-flex justify-content-center">
+                <?php include "read.php"; ?>
+            </div>
+        </main>
         <footer>
             <!-- place footer here -->
         </footer>

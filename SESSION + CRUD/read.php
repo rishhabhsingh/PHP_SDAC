@@ -3,9 +3,11 @@ include 'db.php';
 
 $result = $conn->query("SELECT * FROM products");
 
-echo "<h2>Products List</h2>";
+echo "<div style='text-align:center;'>";
 
-echo "<table border='1' cellpadding='10' cellspacing='0' style='font-size:18px; text-align:center;'>";
+echo "<h2>Products List</h2> <br>";
+
+echo "<table border='1' cellpadding='10' cellspacing='0' style='margin:auto; font-size:18px; text-align:center;'>";
 echo "<tr>
         <th>PID</th>
         <th>Name</th>
@@ -23,4 +25,5 @@ while ($row = $result->fetch_assoc()) {
 }
 
 echo "</table>";
+echo "</div>";
 ?>
