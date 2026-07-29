@@ -1,0 +1,116 @@
+/* ===== Navbar ===== */
+.custom-navbar {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.custom-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link {
+    color: #f0f0f0 !important;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    margin: 0 4px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffd700 !important;
+    transform: translateY(-2px);
+}
+
+.custom-navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    color: #fff;
+}
+
+/* ===== Auth pages (Register / Login) ===== */
+.auth-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.auth-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    /* CSS Requirement: box-shadow elevation effect on form cards */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-btn {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.auth-btn:hover {
+    opacity: 0.9;
+    color: red
+}
+
+/* ===== Carousel ===== */
+.carousel-item img {
+    height: 620px;
+    object-fit: cover;
+}
+
+/* ===== Gradient Animated Table (Book Dashboard) ===== */
+.gradient-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* CSS Requirement: linear-gradient animation on dashboard table header via @keyframes */
+.gradient-table thead {
+    background: linear-gradient(90deg, #6a11cb, #2575fc, #6a11cb);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+    color: #fff;
+}
+
+.gradient-table tbody tr {
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.gradient-table tbody tr:hover {
+    background: #f0f4ff;
+    transform: scale(1.01);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== General spacing polish ===== */
+h2, h3 {
+    font-weight: 700;
+}
+
+.container {
+    padding-bottom: 30px;
+}
