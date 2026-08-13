@@ -1,6 +1,15 @@
-!(screenshots/image.png)
-!(screenshots/image2.png)
-!(screenshots/image3.png)
-!(screenshots/image4.png)
-!(screenshots/image5.png)
-!(screenshots/image6.png)
+# Project Screenshots
+
+## Screenshots
+
+![Screenshot 1](screenshots/image.png)
+
+![Screenshot 2](screenshots/image2.png)
+
+![Screenshot 3](screenshots/image3.png)
+
+![Screenshot 4](screenshots/image4.png)
+
+![Screenshot 5](screenshots/image5.png)
+
+![Screenshot 6](screenshots/image6.png)
