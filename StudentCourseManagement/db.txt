@@ -1,0 +1,22 @@
+desc users;
++------------+--------------+------+-----+---------------------+----------------+
+| Field      | Type         | Null | Key | Default             | Extra          |
++------------+--------------+------+-----+---------------------+----------------+
+| id         | int(11)      | NO   | PRI | NULL                | auto_increment |
+| name       | varchar(100) | NO   |     | NULL                |                |
+| email      | varchar(150) | NO   | UNI | NULL                |                |
+| password   | varchar(255) | NO   |     | NULL                |                |
+| created_at | timestamp    | NO   |     | current_timestamp() |                |
++------------+--------------+------+-----+---------------------+----------------+
+
+desc courses;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(150) | NO   |     | NULL    |                |
+| description | text         | YES  |     | NULL    |                |
+| duration    | varchar(50)  | NO   |     | NULL    |                |
+| image       | varchar(255) | YES  |     | NULL    |                |
+| user_id     | int(11)      | NO   | MUL | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
